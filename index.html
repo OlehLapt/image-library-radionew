@@ -32,42 +32,6 @@
       bottom: 0;
       width: 100%;
     }
-
-    .slider-container {
-      position: relative;
-      width: 100%;
-      max-width: 600px; /* Установите максимальную ширину слайдера */
-      margin: auto;
-      overflow: hidden;
-    }
-
-    .slider {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slide {
-      min-width: 100%;
-    }
-
-    .slider-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 24px;
-      cursor: pointer;
-      background-color: transparent;
-      border: none;
-      color: white;
-    }
-
-    .prev-btn {
-      left: 10px;
-    }
-
-    .next-btn {
-      right: 10px;
-    }
   </style>
 </head>
 <body>
@@ -80,50 +44,11 @@
     <h2>Welcome to Your Website</h2>
     <p>This is a basic template. Customize it according to your needs.</p>
 
-    <!-- Slider container -->
-    <div class="slider-container">
-      <!-- Slider content -->
-      <div class="slider">
-        <!-- Add more slides with your images -->
-        <div class="slide"><img src="images/photoradio/A1.bmp" alt="Image 1"></div>
-        <div class="slide"><img src="images/photoradio/B1.bmp" alt="Image 2"></div>
-        <div class="slide"><img src="images/photoradio/C1.bmp" alt="Image 3"></div>
-      </div>
-    </div>
+    <!-- Add your images here -->
+    <img src="images/photoradio/A1.bmp" alt="Image 1">
+    <img src="images/photoradio/B1.bmp" alt="Image 2">
+    <img src="images/photoradio/C1.bmp" alt="Image 3">
 
-    <!-- Navigation buttons -->
-    <button class="slider-btn prev-btn" onclick="prevSlide()">❮</button>
-    <button class="slider-btn next-btn" onclick="nextSlide()">❯</button>
-
-    <script>
-      let currentSlide = 0;
-
-      function showSlide(index) {
-        const slider = document.querySelector('.slider');
-        const slides = document.querySelectorAll('.slide');
-        if (index >= slides.length) {
-          currentSlide = 0;
-        } else if (index < 0) {
-          currentSlide = slides.length - 1;
-        } else {
-          currentSlide = index;
-        }
-
-        const translateValue = -currentSlide * 100;
-        slider.style.transform = `translateX(${translateValue}%)`;
-      }
-
-      function nextSlide() {
-        showSlide(currentSlide + 1);
-      }
-
-      function prevSlide() {
-        showSlide(currentSlide - 1);
-      }
-
-      // Show the first slide initially
-      showSlide(0);
-    </script>
   </main>
 
   <footer>
