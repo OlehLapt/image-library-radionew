@@ -21,6 +21,7 @@
 
     main {
       padding: 20px;
+      text-align: center;
     }
 
     footer {
@@ -31,6 +32,28 @@
       position: fixed;
       bottom: 0;
       width: 100%;
+    }
+
+    .image-container {
+      max-width: 600px; /* Установите максимальную ширину изображения */
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .image-slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .image-slide {
+      min-width: 100%;
+    }
+
+    .slider-btn {
+      font-size: 24px;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
     }
   </style>
 </head>
@@ -44,16 +67,55 @@
     <h2>Welcome to Your Website</h2>
     <p>This is a basic template. Customize it according to your needs.</p>
 
-    <!-- Add your images here -->
-    <img src="images/photoradio/A1.bmp" alt="Image 1">
-    <img src="images/photoradio/B1.bmp" alt="Image 2">
-    <img src="images/photoradio/C1.bmp" alt="Image 3">
+    <!-- Image container -->
+    <div class="image-container">
+      <!-- Image slider -->
+      <div class="image-slider">
+        <!-- Add more slides with your images -->
+        <div class="image-slide"><img src="images/photoradio/A1.bmp" alt="Image 1"></div>
+        <div class="image-slide"><img src="images/photoradio/B1.bmp" alt="Image 2"></div>
+        <div class="image-slide"><img src="images/photoradio/C1.bmp" alt="Image 3"></div>
+      </div>
+    </div>
 
+    <!-- Navigation buttons -->
+    <button class="slider-btn" onclick="prevImage()">❮</button>
+    <button class="slider-btn" onclick="nextImage()">❯</button>
   </main>
 
   <footer>
     &copy; 2024 Your Website Name. All rights reserved.
   </footer>
+
+  <script>
+    let currentImage = 0;
+    const totalImages = document.querySelectorAll('.image-slide').length;
+
+    function showImage(index) {
+      const slider = document.querySelector('.image-slider');
+      if (index >= totalImages) {
+        currentImage = 0;
+      } else if (index < 0) {
+        currentImage = totalImages - 1;
+      } else {
+        currentImage = index;
+      }
+
+      const translateValue = -currentImage * 100 / totalImages;
+      slider.style.transform = `translateX(${translateValue}%)`;
+    }
+
+    function nextImage() {
+      showImage(currentImage + 1);
+    }
+
+    function prevImage() {
+      showImage(currentImage - 1);
+    }
+
+    // Show the first image initially
+    showImage(0);
+  </script>
 
 </body>
 </html>
