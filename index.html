@@ -10,6 +10,7 @@
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
+      overflow-x: hidden; /* Добавлено, чтобы предотвратить горизонтальную прокрутку страницы */
     }
 
     header {
@@ -45,7 +46,7 @@
       display: flex;
       transition: transform 0.5s ease-in-out;
       position: relative;
-      overflow: hidden; /* Добавлено для скрытия части изображений за пределами контейнера */
+      overflow: hidden;
     }
 
     .image-slide {
@@ -62,7 +63,7 @@
       position: absolute;
       top: 50%;
       color: #fff;
-      background-color: rgba(0, 0, 0, 0.5); /* Чтобы кнопки были видны на любом фоне */
+      background-color: rgba(0, 0, 0, 0.5);
       padding: 10px;
     }
 
