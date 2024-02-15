@@ -52,6 +52,23 @@
       min-width: 100%;
       opacity: 1;
       transition: opacity 0.5s ease-in-out;
+      position: relative;
+    }
+
+    .image-slide img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .image-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 5px;
+      font-size: 14px;
     }
 
     .slider-btn {
@@ -96,13 +113,16 @@
       <div class="image-slider">
         <!-- Add more slides with your images -->
         <div class="image-slide">
-          <img src="https://raw.githubusercontent.com/OlehLapt/image-library-radionew/main/images/photoradio/A1.bmp" alt="Image 1" style="width: 100%; height: auto; object-fit: contain;">
+          <div class="image-title">Image 1</div>
+          <img src="https://raw.githubusercontent.com/OlehLapt/image-library-radionew/main/images/photoradio/A1.bmp" alt="Image 1">
         </div>
         <div class="image-slide hidden">
-          <img src="https://raw.githubusercontent.com/OlehLapt/image-library-radionew/main/images/photoradio/B1.bmp" alt="Image 2" style="width: 100%; height: auto; object-fit: contain;">
+          <div class="image-title">Image 2</div>
+          <img src="https://raw.githubusercontent.com/OlehLapt/image-library-radionew/main/images/photoradio/B1.bmp" alt="Image 2">
         </div>
         <div class="image-slide hidden">
-          <img src="https://raw.githubusercontent.com/OlehLapt/image-library-radionew/main/images/photoradio/C1.bmp" alt="Image 3" style="width: 100%; height: auto; object-fit: contain;">
+          <div class="image-title">Image 3</div>
+          <img src="https://raw.githubusercontent.com/OlehLapt/image-library-radionew/main/images/photoradio/C1.bmp" alt="Image 3">
         </div>
       </div>
 
