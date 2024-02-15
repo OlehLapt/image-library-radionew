@@ -22,6 +22,7 @@
     main {
       padding: 20px;
       text-align: center;
+      position: relative; /* Добавлено для позиционирования стрелок */
     }
 
     footer {
@@ -35,20 +36,22 @@
     }
 
     .image-container {
-      max-width: 100%; /* Чтобы изображения могли адаптироваться под размер окна браузера */
+      max-width: 100%;
       margin: auto;
       overflow: hidden;
+      position: relative; /* Добавлено для позиционирования стрелок */
     }
 
     .image-slider {
       display: flex;
       transition: transform 0.5s ease-in-out;
+      position: relative;
     }
 
     .image-slide {
       min-width: 100%;
-      opacity: 1; /* Начальная прозрачность */
-      transition: opacity 0.5s ease-in-out; /* Анимация перехода */
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
     }
 
     .slider-btn {
@@ -56,11 +59,23 @@
       cursor: pointer;
       background-color: transparent;
       border: none;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+    }
+
+    .slider-btn-left {
+      left: 10px; /* Регулируйте отступ слева по вашему усмотрению */
+    }
+
+    .slider-btn-right {
+      right: 10px; /* Регулируйте отступ справа по вашему усмотрению */
     }
 
     .hidden {
-      opacity: 0; /* Прозрачность 0 для скрытия изображения */
-      pointer-events: none; /* Изображение становится невидимым для пользовательских событий */
+      opacity: 0;
+      pointer-events: none;
     }
   </style>
 </head>
@@ -95,11 +110,11 @@
           </a>
         </div>
       </div>
-    </div>
 
-    <!-- Navigation buttons -->
-    <button class="slider-btn" onclick="prevImage()">❮</button>
-    <button class="slider-btn" onclick="nextImage()">❯</button>
+      <!-- Navigation buttons -->
+      <button class="slider-btn slider-btn-left" onclick="prevImage()">❮</button>
+      <button class="slider-btn slider-btn-right" onclick="nextImage()">❯</button>
+    </div>
   </main>
 
   <footer>
