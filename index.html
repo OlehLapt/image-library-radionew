@@ -22,7 +22,6 @@
     main {
       padding: 20px;
       text-align: center;
-      position: relative; /* Добавлено для позиционирования стрелок */
     }
 
     footer {
@@ -39,13 +38,14 @@
       max-width: 100%;
       margin: auto;
       overflow: hidden;
-      position: relative; /* Добавлено для позиционирования стрелок */
+      position: relative;
     }
 
     .image-slider {
       display: flex;
       transition: transform 0.5s ease-in-out;
       position: relative;
+      overflow: hidden; /* Добавлено для скрытия части изображений за пределами контейнера */
     }
 
     .image-slide {
@@ -61,16 +61,17 @@
       border: none;
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
       color: #fff;
+      background-color: rgba(0, 0, 0, 0.5); /* Чтобы кнопки были видны на любом фоне */
+      padding: 10px;
     }
 
     .slider-btn-left {
-      left: 10px; /* Регулируйте отступ слева по вашему усмотрению */
+      left: 10px;
     }
 
     .slider-btn-right {
-      right: 10px; /* Регулируйте отступ справа по вашему усмотрению */
+      right: 10px;
     }
 
     .hidden {
@@ -95,18 +96,18 @@
       <div class="image-slider">
         <!-- Add more slides with your images -->
         <div class="image-slide">
-          <a href="images/photoradio/A1.bmp" target="_blank">
-            <img src="images/photoradio/A1.bmp" alt="Image 1" style="width: 100%; height: auto;">
+          <a href="https://github.com/OlehLapt/image-library-radionew/blob/main/images/photoradio/A1.bmp" target="_blank">
+            <img src="https://github.com/OlehLapt/image-library-radionew/raw/main/images/photoradio/A1.bmp" alt="Image 1" style="width: 100%; height: auto;">
           </a>
         </div>
         <div class="image-slide hidden">
-          <a href="images/photoradio/B1.bmp" target="_blank">
-            <img src="images/photoradio/B1.bmp" alt="Image 2" style="width: 100%; height: auto;">
+          <a href="https://github.com/OlehLapt/image-library-radionew/blob/main/images/photoradio/B1.bmp" target="_blank">
+            <img src="https://github.com/OlehLapt/image-library-radionew/raw/main/images/photoradio/B1.bmp" alt="Image 2" style="width: 100%; height: auto;">
           </a>
         </div>
         <div class="image-slide hidden">
-          <a href="images/photoradio/C1.bmp" target="_blank">
-            <img src="images/photoradio/C1.bmp" alt="Image 3" style="width: 100%; height: auto;">
+          <a href="https://github.com/OlehLapt/image-library-radionew/blob/main/images/photoradio/C1.bmp" target="_blank">
+            <img src="https://github.com/OlehLapt/image-library-radionew/raw/main/images/photoradio/C1.bmp" alt="Image 3" style="width: 100%; height: auto;">
           </a>
         </div>
       </div>
