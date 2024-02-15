@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
-      overflow-x: hidden; /* Добавлено, чтобы предотвратить горизонтальную прокрутку страницы */
+      overflow-x: hidden;
     }
 
     header {
@@ -46,13 +46,15 @@
       display: flex;
       transition: transform 0.5s ease-in-out;
       position: relative;
-      overflow: hidden;
     }
 
     .image-slide {
       min-width: 100%;
       opacity: 1;
       transition: opacity 0.5s ease-in-out;
+      background-size: cover;
+      background-position: center;
+      height: 400px; /* Вы можете установить высоту по вашему усмотрению */
     }
 
     .slider-btn {
@@ -96,20 +98,14 @@
       <!-- Image slider -->
       <div class="image-slider">
         <!-- Add more slides with your images -->
-        <div class="image-slide">
-          <a href="https://github.com/OlehLapt/image-library-radionew/blob/main/images/photoradio/A1.bmp" target="_blank">
-            <img src="https://github.com/OlehLapt/image-library-radionew/raw/main/images/photoradio/A1.bmp" alt="Image 1" style="width: 100%; height: auto;">
-          </a>
+        <div class="image-slide" style="background-image: url('https://github.com/OlehLapt/image-library-radionew/raw/main/images/photoradio/A1.bmp');">
+          <a href="https://github.com/OlehLapt/image-library-radionew/blob/main/images/photoradio/A1.bmp" target="_blank"></a>
         </div>
-        <div class="image-slide hidden">
-          <a href="https://github.com/OlehLapt/image-library-radionew/blob/main/images/photoradio/B1.bmp" target="_blank">
-            <img src="https://github.com/OlehLapt/image-library-radionew/raw/main/images/photoradio/B1.bmp" alt="Image 2" style="width: 100%; height: auto;">
-          </a>
+        <div class="image-slide hidden" style="background-image: url('https://github.com/OlehLapt/image-library-radionew/raw/main/images/photoradio/B1.bmp');">
+          <a href="https://github.com/OlehLapt/image-library-radionew/blob/main/images/photoradio/B1.bmp" target="_blank"></a>
         </div>
-        <div class="image-slide hidden">
-          <a href="https://github.com/OlehLapt/image-library-radionew/blob/main/images/photoradio/C1.bmp" target="_blank">
-            <img src="https://github.com/OlehLapt/image-library-radionew/raw/main/images/photoradio/C1.bmp" alt="Image 3" style="width: 100%; height: auto;">
-          </a>
+        <div class="image-slide hidden" style="background-image: url('https://github.com/OlehLapt/image-library-radionew/raw/main/images/photoradio/C1.bmp');">
+          <a href="https://github.com/OlehLapt/image-library-radionew/blob/main/images/photoradio/C1.bmp" target="_blank"></a>
         </div>
       </div>
 
