@@ -47,6 +47,8 @@
 
     .image-slide {
       min-width: 100%;
+      opacity: 1; /* Начальная прозрачность */
+      transition: opacity 0.5s ease-in-out; /* Анимация перехода */
     }
 
     .slider-btn {
@@ -54,6 +56,11 @@
       cursor: pointer;
       background-color: transparent;
       border: none;
+    }
+
+    .hidden {
+      opacity: 0; /* Прозрачность 0 для скрытия изображения */
+      pointer-events: none; /* Изображение становится невидимым для пользовательских событий */
     }
   </style>
 </head>
@@ -77,12 +84,12 @@
             <img src="images/photoradio/A1.bmp" alt="Image 1" style="width: 100%; height: auto;">
           </a>
         </div>
-        <div class="image-slide">
+        <div class="image-slide hidden">
           <a href="images/photoradio/B1.bmp" target="_blank">
             <img src="images/photoradio/B1.bmp" alt="Image 2" style="width: 100%; height: auto;">
           </a>
         </div>
-        <div class="image-slide">
+        <div class="image-slide hidden">
           <a href="images/photoradio/C1.bmp" target="_blank">
             <img src="images/photoradio/C1.bmp" alt="Image 3" style="width: 100%; height: auto;">
           </a>
@@ -104,7 +111,7 @@
     const totalImages = document.querySelectorAll('.image-slide').length;
 
     function showImage(index) {
-      const slider = document.querySelector('.image-slider');
+      const slides = document.querySelectorAll('.image-slide');
       if (index >= totalImages) {
         currentImage = 0;
       } else if (index < 0) {
@@ -113,8 +120,13 @@
         currentImage = index;
       }
 
-      const translateValue = -currentImage * 100 / totalImages;
-      slider.style.transform = `translateX(${translateValue}%)`;
+      slides.forEach((slide, idx) => {
+        if (idx === currentImage) {
+          slide.classList.remove('hidden');
+        } else {
+          slide.classList.add('hidden');
+        }
+      });
     }
 
     function nextImage() {
