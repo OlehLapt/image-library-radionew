@@ -178,16 +178,16 @@
       showImage(currentImage - 1);
     }
 
-    // Открывает изображение в новом окне при клике
+    // Обработка события клика на изображении
+    document.querySelectorAll('.image-slide').forEach((slide, index) => {
+      slide.addEventListener('click', () => openImageInNewWindow(index));
+    });
+
+    // Открывает изображение в новом окне
     function openImageInNewWindow(index) {
       const imageUrl = document.querySelectorAll('.image-slide img')[index].src;
       window.open(imageUrl, '_blank');
     }
-
-    // Добавляет событие onclick к каждой ссылке
-    document.querySelectorAll('.image-slide').forEach((slide, index) => {
-      slide.onclick = () => openImageInNewWindow(index);
-    });
 
     // Show the first image initially
     showImage(0);
