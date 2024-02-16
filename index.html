@@ -49,6 +49,7 @@
       flex: 0 0 auto;
       width: 100%;
       box-sizing: border-box;
+      position: relative;
     }
 
     .image-slide img {
@@ -57,6 +58,16 @@
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
+    }
+
+    .image-title {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      z-index: 1; /* Устанавливаем z-index, чтобы название находилось поверх изображения */
     }
 
     .hidden {
@@ -94,14 +105,17 @@
       <div class="image-slider">
         <!-- Add more slides with your images -->
         <div class="image-slide">
+          <div class="image-title">A1</div>
           <img src="https://raw.githubusercontent.com/OlehLapt/image-library-radionew/main/images/photoradio/A1.bmp" alt="A1">
         </div>
         <!-- Add more slides with your images -->
         <div class="image-slide hidden">
+          <div class="image-title">B1</div>
           <img src="https://raw.githubusercontent.com/OlehLapt/image-library-radionew/main/images/photoradio/B1.bmp" alt="B1">
         </div>
         <!-- Add more slides with your images -->
         <div class="image-slide hidden">
+          <div class="image-title">C1</div>
           <img src="https://raw.githubusercontent.com/OlehLapt/image-library-radionew/main/images/photoradio/C1.bmp" alt="C1">
         </div>
       </div>
