@@ -186,7 +186,8 @@
     // Открывает изображение в новом окне
     function openImageInNewWindow(index) {
       const imageUrl = document.querySelectorAll('.image-slide img')[index].src;
-      window.open(imageUrl, '_blank');
+      const newWindow = window.open();
+      newWindow.document.write(`<html><head><title>Image</title></head><body><img src="${imageUrl}"></body></html>`);
     }
 
     // Show the first image initially
