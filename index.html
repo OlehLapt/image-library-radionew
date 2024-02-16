@@ -183,11 +183,33 @@
       slide.addEventListener('click', () => openImageInNewWindow(index));
     });
 
-    // Открывает изображение в новом окне
+    // Открывает изображение в новом окне с ограничением размера
     function openImageInNewWindow(index) {
       const imageUrl = document.querySelectorAll('.image-slide img')[index].src;
       const newWindow = window.open();
-      newWindow.document.write(`<html><head><title>Image</title></head><body><img src="${imageUrl}"></body></html>`);
+      newWindow.document.write(`
+        <html>
+          <head>
+            <title>Image</title>
+            <style>
+              body {
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+              }
+              img {
+                max-width: 100%;
+                max-height: 100%;
+              }
+            </style>
+          </head>
+          <body>
+            <img src="${imageUrl}" alt="Image">
+          </body>
+        </html>
+      `);
     }
 
     // Show the first image initially
@@ -196,3 +218,4 @@
 
 </body>
 </html>
+
